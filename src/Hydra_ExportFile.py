@@ -1,4 +1,4 @@
-﻿# Hydra: A Plugin for example file sharing
+# Hydra: A Plugin for example file sharing
 # 
 # This file is part of Hydra.
 
@@ -24,7 +24,7 @@ Provided by Hydra 0.0.02
 
 ghenv.Component.Name = "Hydra_ExportFile"
 ghenv.Component.NickName = 'exportHydra'
-ghenv.Component.Message = 'VER 0.0.02\nNOV_18_2015'
+ghenv.Component.Message = 'VER 0.0.02\nJUN_15_2018'
 ghenv.Component.Category = "Extra"
 ghenv.Component.SubCategory = "Hydra"
 try: ghenv.Component.AdditionalHelpFromDocStrings = "1"
@@ -144,7 +144,7 @@ def checkTheInputs():
     #Check to be sure that the user has saved this currently open Rhino file so that we can copy it.
     checkData4 = True
     rhinoDocPath = rc.RhinoDoc.ActiveDoc.Path
-    if os.path.isfile(rhinoDocPath): pass
+    if rhinoDocPath is None or os.path.isfile(rhinoDocPath): pass
     elif not os.path.isfile(rhinoDocPath) and includeRhino_ == True:
         checkData4 = False
         warning = "You must save your Rhino file in order to export it to Hydra. \nEither save your file or set 'includeRhino_' to 'False'."
